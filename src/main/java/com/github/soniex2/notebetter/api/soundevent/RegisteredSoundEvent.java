@@ -1,11 +1,13 @@
 package com.github.soniex2.notebetter.api.soundevent;
 
 import com.google.common.base.Objects;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.world.NoteBlockEvent;
 
 /**
@@ -20,8 +22,10 @@ public class RegisteredSoundEvent implements ISoundEvent {
 
     @Override
     public void play(World world, BlockPos blockPos, SoundCategory soundCategory, float volume, int note) {
+        if (!(world instanceof WorldServer)) return;
         float pitch = (float) Math.pow(2.0, (note - 12) / 12.0);
         world.playSound(null, blockPos, soundEvent, SoundCategory.RECORDS, volume, pitch);
+        ((WorldServer) world).spawnParticle(EnumParticleTypes.NOTE, false, blockPos.getX() + 0.5, blockPos.getY() + 1.2, blockPos.getZ() + 0.5, 0, note / 24.0, 0.0, 0.0, 1.0);
     }
 
     @Override
