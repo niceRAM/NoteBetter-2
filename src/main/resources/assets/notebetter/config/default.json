@@ -2,37 +2,6 @@
   "blocks": [
   ],
   "materials": [
-    {
-      "material": "minecraft:stone",
-      "sound": {
-        "name": "minecraft:block.note.basedrum",
-        "volume": 3.0
-      }
-    },
-    {
-      "material": "minecraft:sand",
-      "sound": {
-        "name": "minecraft:block.note.snare",
-        "volume": 3.0
-      }
-    },
-    {
-      "material": "minecraft:glass",
-      "sound": {
-        "name": "minecraft:block.note.hat",
-        "volume": 3.0
-      }
-    },
-    {
-      "material": "minecraft:planks",
-      "sound": {
-        "name": "minecraft:block.note.bass",
-        "volume": 3.0
-      }
-    }
   ],
-  "default": {
-    "name": "minecraft:block.note.harp",
-    "volume": 3.0
-  }
+  "default": null
 }
